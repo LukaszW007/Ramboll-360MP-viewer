@@ -1,0 +1,16 @@
+.iframeWrapper {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  width: 100%;
+}
+
+.border {
+  margin: 0;
+  display: block;
+  position: absolute;
+  top: 1060px;
+  height: 20px;
+  background: white;
+  width: 100%;
+}
