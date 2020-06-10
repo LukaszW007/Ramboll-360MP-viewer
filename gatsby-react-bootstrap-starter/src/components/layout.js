@@ -6,7 +6,7 @@
  */
 
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 
 import { Container, Row, Col } from "react-bootstrap"
 
@@ -42,7 +42,7 @@ const Layout = ({ children, pageInfo }) => (
                 <span>
                   © {new Date().getFullYear()}, Created by
                   {` `}
-                  <a href="https://no.ramboll.com">Ramboll AS</a>
+                  <Link href="https://no.ramboll.com">Ramboll AS</Link>
                 </span>
               </footer>
             </Col>
