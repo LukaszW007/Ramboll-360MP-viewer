@@ -21,9 +21,9 @@ const CustomNavbar = ({pageInfo}) => {
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto" activeKey={pageInfo && pageInfo.pageName}>
               <NavDropdown title="Henrik Ibsens gate 40-42" id="collapsible-nav-dropdown">
-                <NavDropdown.Item href="360-viewer">360 view</NavDropdown.Item>
-                <NavDropdown.Item href="/map">Map</NavDropdown.Item>
-                <NavDropdown.Item href="/description">Description</NavDropdown.Item>
+                  <NavDropdown.Item><Link to="360-viewer">360 view</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link to="map">map</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link to="description">description</Link></NavDropdown.Item>
                 {/*<NavDropdown.Divider />*/}
               </NavDropdown>
             {/*<Link to="/page-2" className="link-no-style">*/}
