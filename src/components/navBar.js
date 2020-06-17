@@ -4,13 +4,14 @@ import {Link} from "gatsby"
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button, Image} from "react-bootstrap"
 
 import rambollLogo from "../images/Ramboll_Logo_White_RGB_200x42px.png";
-import R8_logo from "../images/r8_logo.svg";
 
-const CustomNavbar = ({pageInfo}) => {
-    console.log(pageInfo);
+const CustomNavbar = props => {
+
+    const {projectName, customer, customerLogo, customerPage} = props.items[0];
+    const {pageName} = props.pageInfo;
     return (
         <>
-      <Navbar variant="dark" expand="lg" id="site-navbar">
+      <Navbar variant="dark" expand="md" id="site-navbar">
         {/* <Container> */}
         <Link to="/" className="link-no-style">
           <Navbar.Brand as="span">
@@ -19,11 +20,11 @@ const CustomNavbar = ({pageInfo}) => {
         </Link>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="mr-auto" activeKey={pageInfo && pageInfo.pageName}>
-              <NavDropdown title="Henrik Ibsens gate 40-42" id="collapsible-nav-dropdown">
-                  <NavDropdown.Item><Link to="360-viewer">360 view</Link></NavDropdown.Item>
-                  <NavDropdown.Item><Link to="map">map</Link></NavDropdown.Item>
-                  <NavDropdown.Item><Link to="description">description</Link></NavDropdown.Item>
+          <Nav className="mr-auto" activeKey={props.pageInfo && pageName}>
+              <NavDropdown title={projectName} id="collapsible-nav-dropdown">
+                  <NavDropdown.Item><Link to="360-viewer" activeClassName="active">360 view</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link to="map" activeClassName="active">map</Link></NavDropdown.Item>
+                  <NavDropdown.Item><Link to="description" activeClassName="active">description</Link></NavDropdown.Item>
                 {/*<NavDropdown.Divider />*/}
               </NavDropdown>
             {/*<Link to="/page-2" className="link-no-style">*/}
@@ -34,7 +35,7 @@ const CustomNavbar = ({pageInfo}) => {
           </Nav>
           <Nav className="ml-auto">
               <Navbar.Text>
-                  Customer: <a href="https://r8property.no/"> R8 Group</a> <Image className="R8-logo" src={R8_logo}/>
+                  Customer: <a href={customerPage}>{customer}</a> <Image className="R8-logo" src={customerLogo}/>
               </Navbar.Text>
             {/*<Form inline onSubmit={e => e.preventDefault()}>*/}
               {/*  <Form.Group>*/}

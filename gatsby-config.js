@@ -1,5 +1,5 @@
 module.exports = {
-  pathPrefix: "/Ramboll-360MP-viewer",
+  pathPrefix: "/",
   siteMetadata: {
     title: `Ramboll-360MP-viewer`,
     description: `360-viewer of MP scans..`,
