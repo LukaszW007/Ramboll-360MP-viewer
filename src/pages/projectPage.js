@@ -7,7 +7,7 @@ import ListOfContent from "../components/listOfContent";
 import {Container, Image} from "react-bootstrap";
 import buildingFacade from "../images/building_facade.png";
 
-const ManagementPage = () => (
+const ProjectPage = () => (
 
     <Layout pageInfo={{pageName: "management"}}>
         <SEO title="Manage" keywords={[`gatsby`, `react`, `bootstrap`]} />
@@ -17,4 +17,4 @@ const ManagementPage = () => (
     </Layout>
 );
 
-export default ManagementPage
+export default ProjectPage

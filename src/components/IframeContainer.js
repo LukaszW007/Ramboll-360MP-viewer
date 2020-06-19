@@ -4,11 +4,13 @@ import {Spinner} from "react-bootstrap";
 
 import styles from "../styles/iframeContainer.module.scss"
 
-const IframeContainer =() => {
+const IframeContainer =(props) => {
+
+    console.log('props iframcontainer: ', JSON.stringify(props))
         return (
             <div className={styles.iframeContainer}>
                 <iframe width='100%' height='1080'
-                            src='https://my.matterport.com/show/?m=YeX1Zx8Ufju&brand=0&play=1&qs=1&ts=5&title=0'
+                            src={props.projects.projectMatterportLink}
                             frameBorder='0'
                             allowFullScreen allow='vr'>
                 </iframe>

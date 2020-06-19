@@ -11,7 +11,7 @@ const IndexPage = () => (
     <Layout pageInfo={{pageName: "index"}}>
         <SEO title="Home" />
         <Container className="text-left">
-            Vil du bli vår kunde? Kontakt oss på ramboll.no
+            <ListOfContent projects={projects}/>
         </Container>
     </Layout>
 );

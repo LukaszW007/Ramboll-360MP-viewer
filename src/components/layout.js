@@ -13,8 +13,12 @@ import { Container, Row, Col } from "react-bootstrap"
 import Navbar from "./navBar";
 import projects from "../data/projects";
 
-const Layout = ({ children, pageInfo }) => {
-    const {items} = projects;
+const Layout = ({ children, pageInfo, data }) => {
+
+    console.log('layout pageInfo: '+ pageInfo);
+    console.log('layout data: '+ data);
+    const checkedData = (data === undefined) ? null : data;
+
     return (
       <StaticQuery
         query={graphql`
@@ -29,7 +33,7 @@ const Layout = ({ children, pageInfo }) => {
         render={() => (
               <>
                 <Container fluid className="px-0 main">
-                  <Navbar pageInfo={pageInfo} items={items}/>
+                  <Navbar pageInfo={pageInfo} items={data}/>
                   <Row noGutters>
                     <Col>
                       <Container className="mt-5">
@@ -57,3 +61,4 @@ const Layout = ({ children, pageInfo }) => {
 )};
 
 export default Layout
+
