@@ -13,7 +13,7 @@ const projects = {
             projectName: "Henrik Ibsens gate 40-42",
             projectPicture: require('../images/building_facade.png'),
             projectDescription: "Henrik Ibsens gate 40-42, Oslo",
-            projectMatterportLink: "https://mpembed.com/show/?m=YeX1Zx8Ufju&brand=1&play=1&qs=1&ts=5&title=1&minimap=1&scaleui=1&mt=2&details=1&mdir=2&mdirsearch=2&stats=3&image=https://no.ramboll.com/-/media/images/rambolllogos/ramboll_logo_websites.png",
+            projectMatterportLink: "https://mpembed.com/show/?m=YeX1Zx8Ufju&brand=1&play=1&qs=1&ts=5&title=1&minimap=1&scaleui=1&mt=2&details=1&mdir=2&mdirsearch=2&stats=3&image=https://no.ramboll.com/-/media/images/rambolllogos/ramboll_logo_websites.png&ga=UA-170631170-2",
             customer: "R8 Group",
             customerLogo: require('../images/r8_logo.svg'),
             customerPage: "https://r8property.no/",
