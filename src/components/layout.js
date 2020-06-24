@@ -6,38 +6,37 @@
  */
 
 import React from "react"
-import { StaticQuery, graphql, Link } from "gatsby"
+import {StaticQuery, graphql, Link, useStaticQuery} from "gatsby"
 
-import { Container, Row, Col } from "react-bootstrap"
+import {Container, Row, Col} from "react-bootstrap"
 
 import Navbar from "./navBar";
 import projects from "../data/projects";
 
-const Layout = ({ children, pageInfo, data }) => {
+const Layout = ({children, pageInfo, data}) => {
 
-    console.log('layout pageInfo: '+ pageInfo);
-    console.log('layout data: '+ data);
+    console.log('layout pageInfo: ' + pageInfo);
+    console.log('layout data: ' + data);
     const checkedData = (data === undefined) ? null : data;
 
-    return (
-      <StaticQuery
-        query={graphql`
-          query SiteTitleQuery {
+    const infoAuthor = useStaticQuery(graphql`
+          query {
             site {
               siteMetadata {
-                title
+                author
               }
             }
-          }
-        `}
-        render={() => (
-              <>
+        }`
+    );
+
+    return (
+        <>
                 <Container fluid className="px-0 main">
-                  <Navbar pageInfo={pageInfo} items={data}/>
+                  <Navbar pageInfo={pageInfo} items={data} />
                   <Row noGutters>
                     <Col>
                       <Container className="mt-5">
-                        <main>{children}</main>
+                          <main>{children}</main>
                       </Container>
                     </Col>
                   </Row>
@@ -47,18 +46,17 @@ const Layout = ({ children, pageInfo, data }) => {
                     <Col className="footer-col">
                       <footer>
                         <span>
-                          © {new Date().getFullYear()}, Created by
-                          {` `}
-                          <Link href="https://no.ramboll.com">Ramboll AS</Link>
+                          © {new Date().getFullYear()}, Created by {infoAuthor.site.siteMetadata.author} for
+                            {` `}
+                            <Link href="https://no.ramboll.com">Ramboll AS</Link>
                         </span>
                       </footer>
                     </Col>
                   </Row>
                 </Container>
               </>
-        )}
-      />
-)};
+    )
+};
 
 export default Layout
 

@@ -7,7 +7,6 @@ import rambollLogo from "../images/Ramboll_Logo_White_RGB_200x42px.png";
 
 const CustomNavbar = props => {
 
-    const {pageName} = props.pageInfo;
     if (props.items !== undefined || props.items != null) {
         const {projectName, customer, customerLogo, customerPage, projectUrlName} = props.items;
 
@@ -22,7 +21,7 @@ const CustomNavbar = props => {
             </Link>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-              <Nav className="mr-auto" activeKey={props.pageInfo && pageName}>
+              <Nav className="mr-auto" activeKey={props.pageInfo}>
                   <NavDropdown title={projectName} id="collapsible-nav-dropdown">
                       <NavDropdown.Item><Link to={`/${projectUrlName}/360-viewer`} activeClassName="active">360 view</Link></NavDropdown.Item>
                       <NavDropdown.Item><Link to={`/${projectUrlName}/map`} activeClassName="active">map</Link></NavDropdown.Item>

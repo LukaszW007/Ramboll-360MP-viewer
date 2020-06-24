@@ -24,6 +24,7 @@
     "react-icons": "^3.6.1"
   },
   "devDependencies": {
+    "env-cmd": "^10.1.0",
     "gh-pages": "^2.2.0",
     "prettier": "^1.17.0"
   },
@@ -33,7 +34,7 @@
   "license": "MIT",
   "scripts": {
     "build": "gatsby build",
-    "develop": "gatsby develop -H 0.0.0.0 -p 8000",
+    "develop": "env-cmd -f .env.development gatsby develop -H 0.0.0.0 -p 8000",
     "format": "prettier --write src/**/*.{js,jsx}",
     "start": "npm run develop",
     "serve": "gatsby serve",
