@@ -12,10 +12,10 @@ const ViewerPage = () => {
     const {items} = projects;
 
     return (
-        <Layout pageInfo={{pageName: "360-viewer"}} data={items[0]}>
+        <Layout pageInfo={{pageName: "360-viewer"}} data={items[5]}>
             <SEO title="360-viewer" />
             <div className={styles.iframeWrapper}>
-                <IframeContainer timeout={10000} projects={items[0]} />
+                <IframeContainer timeout={10000} projects={items[5]} />
                 <div className={styles.border} />
             </div>
         </Layout>

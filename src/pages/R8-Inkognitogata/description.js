@@ -9,10 +9,10 @@ const DescriptionPage = () => {
     const {items} = projects;
 
     return (
-        <Layout pageInfo={{pageName: "description"}} data={items[0]}>
+        <Layout pageInfo={{pageName: "description"}} data={items[5]}>
             <SEO title="Project description" />
-            <h1>{items[0].customer}</h1>
-            <p>Address: {items[0].projectDescription}</p>
+            <h1>{items[5].customer}</h1>
+            <p>Address: {items[5].projectDescription}</p>
         </Layout>
     );
 };

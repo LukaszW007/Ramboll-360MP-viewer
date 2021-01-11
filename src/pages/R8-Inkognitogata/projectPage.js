@@ -13,10 +13,10 @@ const ProjectPage = () => {
     const {items} = projects;
 
     return (
-        <Layout pageInfo={{pageName: "management"}} data={items[0]}>
+        <Layout pageInfo={{pageName: "management"}} data={items[5]}>
             <SEO title="Manage" keywords={[`gatsby`, `react`, `bootstrap`]} />
             <Container className="text-center">
-                    <Image src={projects.items[0].projectPicture} className={style.projectImage} />
+                    <Image src={projects.items[5].projectPicture} className={style.projectImage} />
             </Container>
         </Layout>
     );
