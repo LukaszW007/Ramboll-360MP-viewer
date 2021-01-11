@@ -9,6 +9,19 @@ const projects = {
     items: [
         {
             id: uuidv4(),
+            projectUrlName: "R8-Inkognitogata",
+            projectName: "Inkognitogata 33",
+            projectPicture: require('../images/Inkognitogata.png'),
+            projectDescription: "Inkognitogata 33, Oslo",
+            projectMatterportLink: "https://mpembed.com/show/?m=Jbdfqv6zcYC&brand=1&play=1&qs=1&ts=5&title=1&minimap=1&scaleui=1&mt=2&details=1&mdir=2&mdirsearch=2&stats=3&image=https://no.ramboll.com/-/media/images/rambolllogos/ramboll_logo_websites.png&ga=UA-170631170-2",
+            customer: "R8 Group",
+            customerLogo: require('../images/r8_logo.svg'),
+            customerPage: "https://r8property.no/",
+
+            projectPosition: "https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1999.97552088736!2d10.720822863126436!3d59.91595360570134!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46416dd5178dacff%3A0x65afc93054810a3e!2sAdokatfirmaet%20Cappelen%20%26%20Krefting%20DA!5e0!3m2!1sen!2sno!4v1610362188039!5m2!1sen!2sno",
+        },
+        {
+            id: uuidv4(),
             projectUrlName: "R8-Henrik-Ibsens-gate",
             projectName: "Henrik Ibsens gate 40-42",
             projectPicture: require('../images/building_facade.png'),
