@@ -1,20 +1,52 @@
 import React from "react"
-import {Link} from "gatsby"
+import {graphql, Link} from "gatsby"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 
-const SecondPage = () => (
-    <Layout pageInfo={{pageName: "map"}}>
-    <SEO title="map" />
-      <div
-          className="embed-container">
-      <iframe width="100%" height="1080" frameBorder="0" scrolling="no" marginHeight="0"
-              marginWidth="0" title="Esri Mid-Century Basemap"
-              src="//www.arcgis.com/apps/Embed/index.html?webmap=34579c96ecda42d09f96bec0ad26ad45&extent=10.7249,59.925,10.7299,59.9151&zoom=true&previewImage=false&scale=true&disable_scroll=true&theme=dark&marker=10.7249;59.9151;;;;R8%20Property">
-      </iframe>
-      </div>
-  </Layout>
-);
+const MapPage = ({data: queryData}) => {
+    const {data} = queryData.airtable;
 
-export default SecondPage
+    return (
+        <Layout pageInfo={{pageName: "map"}} data={data}>
+            <SEO title="map" />
+              <div className="embed-container">
+                  <iframe
+                      width="100%"
+                      height="1080"
+                      frameBorder="0"
+                      scrolling="no"
+                      marginHeight="0"
+                      marginWidth="0"
+                      title="Esri Mid-Century Basemap"
+                      src={data.projectPosition}>
+                  </iframe>
+              </div>
+        </Layout>
+    )
+};
+
+export default MapPage;
+
+export const projectsQuery = graphql`
+    query MapBySlug($projectUrlName: String!) {
+        # Query the post with the uid passed in from gatsby-node.js
+        airtable(data: {projectUrlName: {eq: $projectUrlName}}) {
+            data {
+                customer
+                customerLogo {
+                    url
+                }
+                customerPage
+                projectDescription
+                projectMatterportLink
+                projectName
+                projectPicture {
+                    url
+                }
+                projectPosition
+                projectUrlName
+            }
+        }
+    }
+`;

@@ -10,7 +10,7 @@ const IframeContainer =(props) => {
         return (
             <div className={styles.iframeContainer}>
                 <iframe width='100%' height='1080'
-                            src={props.projects.projectMatterportLink}
+                            src={props.projects}
                             frameBorder='0'
                             allowFullScreen allow='vr'>
                 </iframe>

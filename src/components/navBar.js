@@ -1,17 +1,28 @@
 import React from "react"
-import {Link} from "gatsby"
+import {graphql, Link, useStaticQuery} from "gatsby"
 
 import {Navbar, Nav, NavDropdown, Form, FormControl, Button, Image} from "react-bootstrap"
 
 import rambollLogo from "../images/Ramboll_Logo_White_RGB_200x42px.png";
 
-const CustomNavbar = props => {
+const CustomNavbar = (props) => {
+
+    const airtableDataQuery = useStaticQuery(graphql`
+        query {
+            airtable {
+                data {
+                    id
+                }
+            }
+        }`
+    );
+    console.log(`airtableDataQuery: ${airtableDataQuery.airtable.data.id}`)
 
     if (props.items !== undefined || props.items != null) {
         const {projectName, customer, customerLogo, customerPage, projectUrlName} = props.items;
 
         return (
-            <>
+            <div>
           <Navbar variant="dark" expand="md" id="site-navbar">
             {/* <Container> */}
               <Link to={(`/${projectUrlName}/projectPage`) || "/"} className="link-no-style">
@@ -23,9 +34,12 @@ const CustomNavbar = props => {
             <Navbar.Collapse id="basic-navbar-nav">
               <Nav className="mr-auto" activeKey={props.pageInfo}>
                   <NavDropdown title={projectName} id="collapsible-nav-dropdown">
-                      <NavDropdown.Item><Link to={`/${projectUrlName}/360-viewer`} activeClassName="active">360 view</Link></NavDropdown.Item>
-                      <NavDropdown.Item><Link to={`/${projectUrlName}/map`} activeClassName="active">map</Link></NavDropdown.Item>
-                      <NavDropdown.Item><Link to={`/${projectUrlName}/description`} activeClassName="active">description</Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link to={`/${projectUrlName}/360-viewer`}
+                                              activeClassName="active">360 view</Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link to={`/${projectUrlName}/map`}
+                                              activeClassName="active">map</Link></NavDropdown.Item>
+                      <NavDropdown.Item><Link to={`/${projectUrlName}/description`}
+                                              activeClassName="active">description</Link></NavDropdown.Item>
                       {/*<NavDropdown.Divider />*/}
                   </NavDropdown>
                   {/*<Link to="/page-2" className="link-no-style">*/}
@@ -36,7 +50,9 @@ const CustomNavbar = props => {
               </Nav>
               <Nav className="ml-auto">
                   <Navbar.Text>
-                      Customer: <a href={customerPage}>{customer}</a> <Image className="R8-logo" src={customerLogo}/>
+                      Customer:
+                      <a href={customerPage} target='_blank'>{customer}</a>
+                      <Image className="R8-logo" src={customerLogo[0].url} />
                   </Navbar.Text>
                   {/*<Form inline onSubmit={e => e.preventDefault()}>*/}
                   {/*  <Form.Group>*/}
@@ -52,7 +68,7 @@ const CustomNavbar = props => {
             </Navbar.Collapse>
               {/* </Container> */}
           </Navbar>
-        </>
+        </div>
         )
     }
     return (
@@ -68,4 +84,4 @@ const CustomNavbar = props => {
     )
 };
 
-export default CustomNavbar
+export default CustomNavbar;

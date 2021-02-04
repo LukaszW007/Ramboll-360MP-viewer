@@ -1,9 +1,14 @@
+require(`dotenv`).config({
+    path: `.env.${process.env.NODE_ENV}`,
+});
+
 module.exports = {
   pathPrefix: "/",
   siteMetadata: {
     title: `Ramboll-360MP-viewer`,
     description: `360-viewer of MP scans..`,
     author: `Lukasz W`,
+    apiUrl: process.env.API_URL,
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
@@ -16,7 +21,20 @@ module.exports = {
               head: true,
           },
       },
-    {
+      {
+          resolve: `gatsby-source-airtable`,
+          options: {
+              apiKey: process.env.AIRTABLE_API_KEY,
+              tables: [
+                  {
+                      baseId: process.env.AIRTABLE_BASE_ID,
+                      tableName: process.env.AIRTABLE_TABLE_NAME,
+                      //tableView: `Grid view`,
+                  },
+              ]
+          }
+      },
+      {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `images`,

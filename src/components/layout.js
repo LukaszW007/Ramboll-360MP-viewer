@@ -15,8 +15,8 @@ import projects from "../data/projects";
 
 const Layout = ({children, pageInfo, data}) => {
 
-    console.log('layout pageInfo: ' + pageInfo);
-    console.log('layout data: ' + data);
+    console.log('layout pageInfo: ' + JSON.stringify(pageInfo));
+    console.log('layout data: ' + JSON.stringify(data));
     const checkedData = (data === undefined) ? null : data;
 
     const infoAuthor = useStaticQuery(graphql`
@@ -59,4 +59,6 @@ const Layout = ({children, pageInfo, data}) => {
 };
 
 export default Layout
+
+// export const
 

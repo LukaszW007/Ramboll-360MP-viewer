@@ -87,5 +87,5 @@ const projects = {
         },
     ],
 };
-
+console.log(JSON.stringify(projects));
 export default projects;

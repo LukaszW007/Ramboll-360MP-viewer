@@ -9,16 +9,22 @@ import { Router } from "@reach/router"
 import style from "../styles/listOfContent.module.scss"
 
 const ListOfContent = props => {
-    const { items } = props.projects;
 
-    console.log('ListOfContent props: '+ JSON.stringify(props));
-    console.log('ListOfContent projects variable: '+ items);
+    console.log(`props: ${JSON.stringify(props)}`)
+    const  edges  = props.projects.allAirtable.edges;
 
-    const listOfProjects = items.map( Item =>
-            <ListGroup.Item key={Item.id} >
-                <Image src={Item.customerLogo} className={style.CustomerLogo} />
-                <Link to={`/${Item.projectUrlName}/projectPage`} className={style.Link}>{Item.projectName}</Link>
-            </ListGroup.Item>
+    console.log('ListOfContent props: '+ JSON.stringify(edges[0].node.data.customerLogo[0].url));
+    console.log('ListOfContent projects variable: '+ edges);
+
+    const listOfProjects = edges.map( Item => {
+        const {customerLogo, projectUrlName, projectName} = Item.node.data;
+        const url = customerLogo!==null ? customerLogo[0].url : '';
+            return (<ListGroup.Item key={Item.node.data.id}>
+                <Image src={url} className={style.CustomerLogo} />
+                <Link to={`/${projectUrlName}/projectPage`}
+                      className={style.Link}>{projectName}</Link>
+            </ListGroup.Item>)
+        }
     );
     return (
         <ListGroup>
