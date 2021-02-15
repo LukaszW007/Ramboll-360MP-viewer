@@ -5,9 +5,9 @@ import SEO from "../components/seo"
 
 import ListOfContent from "../components/listOfContent";
 import {Container, Image} from "react-bootstrap";
-import buildingFacade from "../images/building_facade.png";
+// import buildingFacade from "../images/building_facade.png";
 import {graphql} from "gatsby";
-import projects from "../data/projects";
+// import projects from "../data/projects";
 import style from "../styles/projectPage.module.scss";
 
 const ProjectPage = ({data: queryData}) => {

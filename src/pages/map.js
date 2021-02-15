@@ -18,7 +18,7 @@ const MapPage = ({data: queryData}) => {
                       scrolling="no"
                       marginHeight="0"
                       marginWidth="0"
-                      title="Esri Mid-Century Basemap"
+                      title="Basemap"
                       src={data.projectPosition}>
                   </iframe>
               </div>
