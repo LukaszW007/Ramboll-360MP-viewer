@@ -21,7 +21,7 @@ const DescriptionPage = ({data: queryData}) => {
 export default DescriptionPage
 
 export const projectsQuery = graphql`
-    query DescriptionBySlug($projectUrlName: String!) {
+    query DescriptionBySlug($projectUrlName: String) {
         # Query the post with the uid passed in from gatsby-node.js
         airtable(data: {projectUrlName: {eq: $projectUrlName}}) {
             data {

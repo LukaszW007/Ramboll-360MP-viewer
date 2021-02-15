@@ -29,7 +29,7 @@ const MapPage = ({data: queryData}) => {
 export default MapPage;
 
 export const projectsQuery = graphql`
-    query MapBySlug($projectUrlName: String!) {
+    query MapBySlug($projectUrlName: String) {
         # Query the post with the uid passed in from gatsby-node.js
         airtable(data: {projectUrlName: {eq: $projectUrlName}}) {
             data {

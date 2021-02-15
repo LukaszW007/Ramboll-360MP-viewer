@@ -25,7 +25,7 @@ const ViewerPage = ({data: queryData}) => {
 export default ViewerPage;
 
 export const projectsQuery = graphql`
-    query ViewerBySlug($projectUrlName: String!) {
+    query ViewerBySlug($projectUrlName: String) {
         # Query the post with the uid passed in from gatsby-node.js
         airtable(data: {projectUrlName: {eq: $projectUrlName}}) {
             data {
