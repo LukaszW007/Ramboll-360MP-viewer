@@ -23,6 +23,7 @@ const IndexPage = () => {
                             projectUrlName
                             id
                             projectName
+                            ready_to_upload
                         }
                     }
                 }

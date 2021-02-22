@@ -17,13 +17,18 @@ const ListOfContent = props => {
     console.log('ListOfContent projects variable: '+ edges);
 
     const listOfProjects = edges.map( Item => {
-        const {customerLogo, projectUrlName, projectName} = Item.node.data;
+        const {customerLogo, projectUrlName, projectName, ready_to_upload} = Item.node.data;
         const url = customerLogo!==null ? customerLogo[0].url : '';
-            return (<ListGroup.Item key={Item.node.data.id}>
-                <Image src={url} className={style.CustomerLogo} />
-                <Link to={`/${projectUrlName}/projectPage`}
-                      className={style.Link}>{projectName}</Link>
-            </ListGroup.Item>)
+        if (ready_to_upload === 'YES') {
+            return (
+                <ListGroup.Item key={Item.node.data.id}>
+                    <Image src={url} className={style.CustomerLogo} />
+                    <Link to={`/${projectUrlName}/projectPage`}
+                          className={style.Link}>{projectName}</Link>
+                </ListGroup.Item>
+            )
+        }
+        return null;
         }
     );
     return (

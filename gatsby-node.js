@@ -9,6 +9,7 @@ exports.createPages = async ({ graphql, actions }) => {
           node {
             data {
               projectUrlName
+              ready_to_upload
             }
           }
         }
@@ -22,43 +23,51 @@ exports.createPages = async ({ graphql, actions }) => {
     projects.data.allAirtable.edges.forEach(edge => {
         // TODO cos z ta data.allPrismic jest nie tak
         // Create a page for every post
-        createPage({
-            path: `/${edge.node.data.projectUrlName}/projectPage`,
-            component: templateProjectPage,
-            context: { projectUrlName: edge.node.data.projectUrlName },
-        });
+        if ((edge.node.data.ready_to_upload) === 'YES') {
+            createPage({
+                path: `/${edge.node.data.projectUrlName}/projectPage`,
+                component: templateProjectPage,
+                context: {projectUrlName: edge.node.data.projectUrlName},
+            });
+        }
     });
 
     const template360viewerPage = path.resolve('src/pages/360-viewer.js');
     projects.data.allAirtable.edges.forEach(edge => {
         // TODO cos z ta data.allPrismic jest nie tak
         // Create a page for every post
-        createPage({
-            path: `/${edge.node.data.projectUrlName}/360-viewer`,
-            component: template360viewerPage,
-            context: { projectUrlName: edge.node.data.projectUrlName },
-        });
+        if ((edge.node.data.ready_to_upload) === 'YES') {
+            createPage({
+                path: `/${edge.node.data.projectUrlName}/360-viewer`,
+                component: template360viewerPage,
+                context: {projectUrlName: edge.node.data.projectUrlName},
+            });
+        }
     });
 
     const templateDescriptionPage = path.resolve('src/pages/description.js');
     projects.data.allAirtable.edges.forEach(edge => {
         // TODO cos z ta data.allPrismic jest nie tak
         // Create a page for every post
-        createPage({
-            path: `/${edge.node.data.projectUrlName}/description`,
-            component: templateDescriptionPage,
-            context: { projectUrlName: edge.node.data.projectUrlName },
-        });
+        if ((edge.node.data.ready_to_upload) === 'YES') {
+            createPage({
+                path: `/${edge.node.data.projectUrlName}/description`,
+                component: templateDescriptionPage,
+                context: {projectUrlName: edge.node.data.projectUrlName},
+            });
+        }
     });
 
     const templateMapPage = path.resolve('src/pages/map.js');
     projects.data.allAirtable.edges.forEach(edge => {
         // TODO cos z ta data.allPrismic jest nie tak
         // Create a page for every post
-        createPage({
-            path: `/${edge.node.data.projectUrlName}/map`,
-            component: templateMapPage,
-            context: { projectUrlName: edge.node.data.projectUrlName },
-        });
+        if ((edge.node.data.ready_to_upload) === 'YES') {
+            createPage({
+                path: `/${edge.node.data.projectUrlName}/map`,
+                component: templateMapPage,
+                context: {projectUrlName: edge.node.data.projectUrlName},
+            });
+        }
     });
 };
