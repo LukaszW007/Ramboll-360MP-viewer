@@ -7,7 +7,7 @@ module.exports = {
   siteMetadata: {
     title: `Ramboll-360MP-viewer`,
     description: `360-viewer of MP scans..`,
-    author: `Lukasz W`,
+    author: `Lukasz Wiszniewski`,
     apiUrl: process.env.API_URL,
   },
   plugins: [

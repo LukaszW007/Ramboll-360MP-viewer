@@ -6,6 +6,7 @@
  */
 
 import React from "react"
+import { OutboundLink } from 'gatsby-plugin-google-analytics';
 import {StaticQuery, graphql, Link, useStaticQuery} from "gatsby"
 
 import {Container, Row, Col} from "react-bootstrap"
@@ -46,9 +47,15 @@ const Layout = ({children, pageInfo, data}) => {
                     <Col className="footer-col">
                       <footer>
                         <span>
-                          © {new Date().getFullYear()}, Created by {infoAuthor.site.siteMetadata.author} for
+                          © {new Date().getFullYear()}, Created by
                             {` `}
-                            <Link href="https://no.ramboll.com">Ramboll AS</Link>
+                            <a href="https://3d-points.com">
+                                {infoAuthor.site.siteMetadata.author}
+                            </a>
+                            {` `}
+                            for
+                            {` `}
+                            <a href="https://no.ramboll.com">Ramboll AS</a>
                         </span>
                       </footer>
                     </Col>
