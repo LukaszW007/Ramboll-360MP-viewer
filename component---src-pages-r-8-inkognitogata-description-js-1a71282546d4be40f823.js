@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[19],{Ogap:function(e,t,a){"use strict";a.r(t);var n=a("q1tI"),r=a.n(n),c=(a("Wbzz"),a("Bl7J")),i=a("vrFN"),o=a("bHiP");t.default=function(){var e=o.a.items;return r.a.createElement(c.a,{pageInfo:{pageName:"description"},data:e[0]},r.a.createElement(i.a,{title:"Project description"}),r.a.createElement("h1",null,e[0].customer),r.a.createElement("p",null,"Address: ",e[0].projectDescription))}}}]);
-//# sourceMappingURL=component---src-pages-r-8-inkognitogata-description-js-1a71282546d4be40f823.js.map

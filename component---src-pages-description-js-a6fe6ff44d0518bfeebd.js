@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[5],{QVtR:function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),r=n.n(a),c=(n("Wbzz"),n("Bl7J")),l=n("vrFN");t.default=function(){return r.a.createElement(c.a,{pageInfo:{pageName:"description"}},r.a.createElement(l.a,{title:"Project description"}),r.a.createElement("h1",null,"R8 Property"),r.a.createElement("p",null,"Address: Henrik Ibsens gate 40-42, Oslo"))}}}]);
-//# sourceMappingURL=component---src-pages-description-js-a6fe6ff44d0518bfeebd.js.map

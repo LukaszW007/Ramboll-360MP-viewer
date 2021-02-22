@@ -1,2 +1,0 @@
-(window.webpackJsonp=window.webpackJsonp||[]).push([[15],{"8nGn":function(e,t,n){"use strict";n.r(t);var a=n("q1tI"),r=n.n(a),c=(n("Wbzz"),n("Bl7J")),i=n("vrFN"),o=n("bHiP");t.default=function(){var e=o.a.items;return r.a.createElement(c.a,{pageInfo:{pageName:"description"},data:e[0]},r.a.createElement(i.a,{title:"Project description"}),r.a.createElement("h1",null,e[0].customer),r.a.createElement("p",null,"Address: ",e[0].projectDescription))}}}]);
-//# sourceMappingURL=component---src-pages-r-8-henrik-ibsens-gate-description-js-c579d87b132e8e1958f4.js.map
